@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.4/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
 </head>
 
@@ -35,7 +35,7 @@
 
           <div id="signin" class="g-signin2"></div>
           <button id="signout" ng-click="signOut()">Signout</button>
-          <button id="disconnect" ng-click="disconnect()">Disconnect</button>
+          <button id="disconnect" ng-click="appStart()">Disconnect</button>
 
         </ul>
       </div>
@@ -63,7 +63,7 @@
   <script src="components/people.js"></script>
   <script src="components/person.js"></script>
   
-  <script src="https://apis.google.com/js/platform.js?onload=appStart" async defer></script>
+  <script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 </body>
 
 </html>

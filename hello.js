@@ -1,5 +1,11 @@
 var myApp = angular.module('hello', ['ui.router']);
 
+// seems like a hack
+// https://stackoverflow.com/questions/19399419/angular-js-and-google-api-client-js-gapi
+function init() {
+    window.appStart();
+}
+
 myApp.controller('hellocon', ['$scope', '$window', function($scope, $window) {
     
     console.log('controlled');
@@ -7,7 +13,8 @@ myApp.controller('hellocon', ['$scope', '$window', function($scope, $window) {
     var auth2;
     
     $scope.user = {};
-
+    
+    // called from init outside angular scope
     $window.appStart = function() {
         console.log('appStart()');
         gapi.load('auth2', initSigninV2);
@@ -104,11 +111,10 @@ myApp.config(function($stateProvider) {
   
   // Loop over the state definitions and register them
   states.forEach(function(state) {
-    $stateProvider.state(state);
+      $stateProvider.state(state);
   });
 });
 
-
 myApp.run(function($http, $uiRouter) {
-  $http.get('data/people.json', { cache: true });
+    $http.get('data/people.json', { cache: true });
 });
