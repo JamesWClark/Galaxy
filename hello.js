@@ -1,6 +1,8 @@
 var myApp = angular.module('hello', ['ui.router']);
 
-myApp.controller('hellocon', function($scope, $window) {
+myApp.controller('hellocon', ['$scope', '$window', function($scope, $window) {
+    
+    console.log('controlled');
     
     var auth2;
     
@@ -66,7 +68,7 @@ myApp.controller('hellocon', function($scope, $window) {
         });
         console.log(auth2);
     };
-});
+}]);
 
 myApp.config(function($stateProvider) {
   
